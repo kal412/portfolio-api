@@ -3,12 +3,19 @@ const path = require("path");
 const multer = require("multer");
 const Landing = require("./models/Landing");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 require("./models/database");
 const routes = require("./routes/portfolioRoutes.js");
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT;
 
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+  })
+);
 // for parsing application/json
 app.use(bodyParser.json());
 

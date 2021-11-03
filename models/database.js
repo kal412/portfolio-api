@@ -1,10 +1,13 @@
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
+dotenv.config();
 //connect to mongodb
-const dbURI =
-  "mongodb+srv://kal:laajkinababa123@portfolio.gsw1l.mongodb.net/dynamic?retryWrites=true&w=majority";
 mongoose
-  .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(process.env.DB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then((result) => {
     console.log("Connnection successful");
   })
