@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
-const dotenv = require("dotenv");
 
-dotenv.config();
+dBURI =
+  "mongodb+srv://kal:laajkinababa123@portfolio.gsw1l.mongodb.net/dynamic?retryWrites=true&w=majority";
 //connect to mongodb
 mongoose
-  .connect(process.env.DB_URI, {
+  .connect(dBURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
